@@ -1,75 +1,114 @@
-# Drowsiness Detection OpenCV 😴 🚫 🚗
+# Drowsiness Detection using OpenCV 😴🚫🚗
 
-[![](https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000)](https://github.com/akshaybahadur21/Drowsiness_Detection/blob/master/LICENSE.txt)  [![](https://img.shields.io/badge/Akshay-Bahadur-brightgreen.svg?colorB=ff0000)](https://akshaybahadur.com)
+This project detects eye closure in real time and alerts the user when drowsiness is detected.
 
-This code can detect your eyes and alert when the user is drowsy.
+---
+
+## About This Project
+
+This implementation is **based on an open-source project originally created by Akshay Bahadur**.  
+I studied the approach and built my own working version as part of my learning in Computer Vision and Python.
+
+This repository contains:
+✔ the working detection pipeline  
+✔ the model files  
+✔ setup configuration  
+✔ documentation created while understanding the Eye Aspect Ratio (EAR)–based drowsiness detection method  
+
+This project helped me understand real-time video processing, facial landmark detection, and fatigue monitoring systems.
+
+---
 
 ## Applications 🎯
-This can be used by riders who tend to drive for a longer period of time that may lead to accidents
+This can help reduce road accidents caused by fatigue, especially for drivers travelling long distances.
 
-### Code Requirements 🦄
-The example code is in Python ([version 2.7](https://www.python.org/download/releases/2.7/) or higher will work). 
+---
 
-### Dependencies
+## Code Requirements 🦄
+Python 2.7+ or any Python 3.x version.
 
-1) import cv2
-2) import imutils
-3) import dlib
-4) import scipy
+---
+
+## Dependencies
+
+- OpenCV  
+- imutils  
+- dlib  
+- scipy  
+
+---
+
+## Description 📌
+
+A computer-vision system that detects drowsiness in real-time webcam video and plays an alert if the user appears sleepy.  
+The system calculates the **Eye Aspect Ratio (EAR)** using facial landmark detection.
+
+If EAR remains below a threshold for multiple continuous frames, the user is considered drowsy.
+
+---
+
+## Algorithm 👨‍🔬
+
+Each eye is represented by 6 key-points around the eyelid.
+
+The EAR value is computed and monitored for 20 consecutive frames.  
+If the EAR value falls below **0.25**, an alert is triggered.
+
+---
+
+## My Contributions ✨
+
+- Set up and configured the project environment  
+- Integrated and tested the pretrained landmark model  
+- Implemented EAR-based eye-closure detection  
+- Debugged and ran real-time webcam processing  
+- Documented the project for clarity  
+
+This work strengthened my understanding of:
+
+✔ OpenCV pipelines  
+✔ dlib landmark detection  
+✔ EAR fatigue metrics  
+✔ real-time inference performance  
+
+---
+
+## Results 📊
+
+Drowsiness is successfully detected and alerts trigger when eye closure persists.
+
+---
+
+## How to Run ▶️
 
 
-### Description 📌
+Allow webcam permission when prompted.
 
-A computer vision system that can automatically detect driver drowsiness in a real-time video stream and then play an alarm if the driver appears to be drowsy.
+---
 
-### Algorithm 👨‍🔬
+## Model File
 
-Each eye is represented by 6 (x, y)-coordinates, starting at the left-corner of the eye (as if you were looking at the person), and then working clockwise around the eye.
+`shape_predictor_68_face_landmarks.dat`  
+is the pretrained model used for facial landmark detection.
 
-It checks 20 consecutive frames and if the Eye Aspect ratio is less than 0.25, Alert is generated.
+---
 
-<img src="https://github.com/akshaybahadur21/Drowsiness_Detection/blob/master/assets/eye1.jpg">
+## Credits ❤️
 
+Original Author: **Akshay Bahadur**  
+Repository: https://github.com/akshaybahadur21/Drowsiness_Detection  
 
-#### Relationship
+This repo contains my modified working version created for learning and academic purposes.
 
-<img src="https://github.com/akshaybahadur21/Drowsiness_Detection/blob/master/assets/eye2.png">
+---
 
-#### Summing up
+## License 📜
 
-<img src="https://github.com/akshaybahadur21/Drowsiness_Detection/blob/master/assets/eye3.jpg">
+This project uses the MIT License.
+Original license and credit remain with the author.
 
-
-For more information, [see](https://www.pyimagesearch.com/2017/05/08/drowsiness-detection-opencv/)
-
-### Results 📊
-
-<img src="https://github.com/akshaybahadur21/BLOB/blob/master/drowsy.gif">
-
-
-### Execution 🐉
-To run the code, type `python Drowsiness_Detection.py`
-
-```
-python Drowsiness_Detection.py
-```
-
-###### Made with ❤️ and 🦙 by Akshay Bahadur
-
-## 📌 Cite Us
-
-To cite this guide, use the below format:
-```
-@article{Drowsiness_Detection,
-author = {Bahadur, Akshay},
-journal = {https://github.com/akshaybahadur21/Drowsiness_Detection},
-month = {01},
-title = {{Drowsiness_Detection}},
-year = {2018}
-}
-```
+---
 
 ## References 🔱
- 
- -   Adrian Rosebrock, [PyImageSearch Blog](https://www.pyimagesearch.com/2017/05/08/drowsiness-detection-opencv/)
-
+- Adrian Rosebrock — PyImageSearch Blog  
+  https://www.pyimagesearch.com/2017/05/08/drowsiness-detection-opencv/
